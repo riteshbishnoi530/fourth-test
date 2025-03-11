@@ -1,5 +1,3 @@
-import { FEATUERS_LIST } from '@/utils/helper'
-import { CheckFill } from '@/utils/icons'
 import React from 'react'
 
 function Footer() {

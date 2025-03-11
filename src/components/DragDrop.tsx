@@ -41,14 +41,14 @@ function DragDrop() {
     return (
         <>
             <Header />
-            <p className='font-semibold font-syne text-[32px] text-[#0D0D0D] text-center mt-9 mb-[34px]'>Read & process your files online</p>
+            <p className='font-semibold font-syne text-[32px] max-md:text-2xl max-sm:text-xl text-[#0D0D0D] text-center mt-9 mb-[34px]'>Read & process your files online</p>
             <div className='max-w-[786px] mx-auto p-4 rounded-xl shadow-[0px_16px_42.7px_0px_#00000014] mb-12'>
-                <div {...getRootProps()} className='max-w-[754px] cursor-pointer w-full min-h-[326px] border-dashed border border-[#ED1C24] rounded-lg flex items-center justify-center'>
+                <div {...getRootProps()} className='max-w-[754px] p-4 cursor-pointer w-full min-h-[326px] border-dashed border border-[#ED1C24] rounded-lg flex items-center justify-center'>
                     <div className='flex flex-col justify-center items-center'>
 
                         <input {...getInputProps()} />
                         {uploadImg ? (
-                            <div className='flex items-center'>
+                            <div className='flex items-center gap-2'>
                                 <FileUpload />
                                 <div className='w-full'>
                                     <div className='flex items-center gap-20 justify-between'>

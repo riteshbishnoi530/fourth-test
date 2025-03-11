@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from 'react'
 import Header from './common/Header'
 import Footer from './common/Footer'
 import Image from 'next/image'
@@ -6,13 +7,19 @@ import { DETAILED_LIST } from '@/utils/helper'
 import { RightArrow } from '@/utils/icons'
 
 function Dashboard() {
-    
+    const [imageName, setImageName] = useState<string>('');
+    useEffect(() => {
+        const storedImageName = localStorage.getItem('uploadedImage');
+        if (storedImageName) {
+            setImageName(storedImageName);
+        }
+    }, []);
     return (
         <div className='bg-[#F6F6F6]'>
             <Header />
             <div className='max-w-[1172px] mx-auto mb-10 px-4 mt-6'>
                 <div className='flex items-center justify-between'>
-                    <p className='text-2xl font-semibold font-syne'>file123.zip</p>
+                    <p className='text-2xl max-sm:text-xl font-semibold font-syne'>{imageName}</p>
                     <button className='uppercase font-medium font-syne rounded-md text-sm py-[15px] px-[22px] border border-[#0D0D0D80] leading-[100%]'>Upload more files</button>
                 </div>
                 <div className='flex max-lg:flex-col gap-6 mt-[23px]'>

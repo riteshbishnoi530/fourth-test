@@ -47,7 +47,7 @@ function WelcomeForm() {
   return (
     <div className='min-h-screen flex flex-col justify-between'>
       <Header />
-      <div className='py-10'>
+      <div className='py-10 px-4'>
         <form className="max-w-[700px] w-full mx-auto flex flex-col gap-4">
           <div className="flex max-sm:flex-col gap-4 w-full">
             <div className='w-1/2 max-sm:w-full'>
