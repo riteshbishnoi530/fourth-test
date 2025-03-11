@@ -41,7 +41,7 @@ function WelcomeForm() {
     localStorage.setItem('formData', JSON.stringify(userData));
     setValue({ firstName: '', lastName: '', email: '' });
     setError(false);
-    window.location.href = '/fileUpload';
+    window.location.href = '/file-upload';
   };
 
   return (

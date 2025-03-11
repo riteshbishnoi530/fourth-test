@@ -25,7 +25,7 @@ function DragDrop() {
                     } else {
                         clearInterval(intervalId);
                         setIsUploading(false);
-                        window.location.href = '/detailsPage';
+                        window.location.href = '/details-page';
                         return 100;
                     }
                 });
