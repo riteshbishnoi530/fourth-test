@@ -33,7 +33,7 @@ function Dashboard() {
                             <Image className='max-sm:size-10' width={60} height={60} src="/assets/images/complexity.webp" alt='complexity' />
                             <p className='font-medium text-xl max-sm:text-base font-syne'>Complexity of the code</p>
                         </div>
-                        <button className='border border-[#ED1C24] rounded-[49px] h-fit text-[#ED1C24] font-medium text-sm py-[6px] px-4'>HIGH</button>
+                        <button className='border border-[#ED1C24] cursor-pointer rounded-[49px] h-fit text-[#ED1C24] font-medium text-sm py-[6px] px-4'>HIGH</button>
                     </div>
                     <div className='flex max-sm:flex-col w-full gap-6 justify-center'>
                         <div className='max-w-[267px] max-lg:max-w-[313px] max-sm:max-w-full w-full flex gap-4 sm:justify-between items-center py-[19px] px-4 bg-white rounded-lg'>

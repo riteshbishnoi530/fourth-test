@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   title: "Data Skate",
   description: "Our accelerator allows you to upload, read, and process multiple file types (e.g., Python, JAR, ZIP), extracting key data like classes, methods, and structure for easy review.",
   openGraph: {
-    title: "DataSkate",
     description: "Read & process your files online",
     images: ["/meta-image.png"],
   },
