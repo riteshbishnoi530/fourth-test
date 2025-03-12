@@ -5,8 +5,13 @@ import Footer from './common/Footer'
 import Image from 'next/image'
 import { DETAILED_LIST } from '@/utils/helper'
 import { RightArrow } from '@/utils/icons'
+import { useRouter, useSearchParams } from 'next/navigation';
 
 function Dashboard() {
+    const params = useSearchParams();
+  const card = params.get("card") || "default-value";
+  const router = useRouter();
+  console.log(card, router);
     const [imageName, setImageName] = useState<string>('');
     useEffect(() => {
         const storedImageName = localStorage.getItem('uploadedImage');
@@ -50,17 +55,33 @@ function Dashboard() {
                 <p className='font-semibold text-2xl font-syne mt-[31px]'>Detailed metrices</p>
                 <div className='flex max-lg:flex-col gap-6 mt-6'>
                     <div className='max-w-[558px] max-lg:mx-auto w-full flex flex-col gap-4'>
-                        {DETAILED_LIST.map((item, index) => (
-                            <div key={index} className='bg-white w-full justify-between rounded-lg flex items-center py-3 px-4'>
-                                <div className='flex items-center gap-4'>
-                                    <div className='size-10 rounded-full bg-[#FFF1F2] flex justify-center items-center'>
-                                        <p className='font-syne text-2xl font-medium'>{item.number}</p>
-                                    </div>
-                                    <p className='text-sm'>{item.heading}</p>
-                                </div>
-                                <RightArrow />
-                            </div>
-                        ))}
+                        {DETAILED_LIST.map((obj, i) => (
+            <button
+              key={i}
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                e.preventDefault();
+                router.push(
+                  `/details-page?card=${obj.heading
+                    .toLowerCase()
+                    .replaceAll(" ", "-")}`,
+                  
+                );
+              }}
+              className={`w-full bg-white flex rounded-lg cursor-pointer border border-solid items-center text-sm justify-between py-3 px-4 ${
+                card === obj.heading.toLowerCase().replaceAll(" ", "-")
+                  ? "border-custom-red"
+                  : "border-transparent"
+              }`}
+            >
+              <div className="flex items-center gap-4">
+                <div className="size-[40px] bg-custom-off-white flex items-center justify-center rounded-full font-medium text-2xl leading-[100%]">
+                  {obj.number}
+                </div>
+                <p>{obj.heading}</p>
+              </div>
+              <RightArrow/>
+            </button>
+          ))}
                     </div>
                     <Image className='pointer-events-none max-w-[558px] w-full max-lg:mx-auto' width={558} height={464} src="/assets/images/starter-processes.webp" alt='starter processes' />
                 </div>
