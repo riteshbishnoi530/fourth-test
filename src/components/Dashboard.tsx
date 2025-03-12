@@ -74,7 +74,7 @@ function Dashboard() {
               }`}
             >
               <div className="flex items-center gap-4">
-                <div className="size-[40px] bg-custom-off-white flex items-center justify-center rounded-full font-medium text-2xl leading-[100%]">
+                <div className="size-[40px] bg-[#FFF1F2] font-syne flex items-center justify-center rounded-full font-medium text-2xl leading-[100%]">
                   {obj.number}
                 </div>
                 <p>{obj.heading}</p>
